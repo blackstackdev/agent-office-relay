@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+evidence/*.local.json
+node_modules/
+web/dist/

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-15",
+  "result": "PASS",
+  "scope": "Actual recorded workspace, full state equality across FalkorDB container restart",
+  "revision": 2,
+  "relay_ids": [
+    "394ddcb64f604877af0a4fb3af3a57de",
+    "98211e5a496448548d78aca562eb29b0"
+  ],
+  "run_ids": [
+    "636d5e973d0a43e29f6d96ca8a93e0ef",
+    "8d370efe0e3c4b30ae6982bc502fce88",
+    "e6507e5a2e9b466d81bd304d65963c3c"
+  ],
+  "state_sha256": "b8b8695d8ddb51546d088c2b5548956f09f27b450621084f121ded2cd8313605"
+}

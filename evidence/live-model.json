@@ -1,0 +1,604 @@
+{
+  "date": "2026-10-15",
+  "model": "qwen3:4b-instruct",
+  "result": "PASS",
+  "runtime": "Local Ollama + real FalkorDB",
+  "initial": {
+    "answer": "Recovery drill evidence is required before release review. Launch task is blocked by policy gate. Dependency on recovery drill remains unfulfilled.\n\nCurrent source: [release-policy]\n\nProposed handoff: task launch to reviewer; pending human approval.\n\nNext check: Await human approval of pending relay packet.",
+    "model": "qwen3:4b-instruct",
+    "context": {
+      "project": "lantern",
+      "revision": 1,
+      "task_id": "launch",
+      "task": "Publish the Lantern release",
+      "status": "todo",
+      "dependencies": [
+        {
+          "id": "recovery",
+          "name": "Run the recovery drill",
+          "status": "todo",
+          "path": [
+            "launch",
+            "review",
+            "recovery"
+          ]
+        },
+        {
+          "id": "review",
+          "name": "Complete release review",
+          "status": "todo",
+          "path": [
+            "launch",
+            "review"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "gate",
+          "text": "Recovery drill evidence is required before release review.",
+          "state": "blocking",
+          "version": 1,
+          "path": [
+            "launch",
+            "review",
+            "gate",
+            "release-policy"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "release-policy",
+          "title": "Lantern release policy",
+          "uri": "fixture://lantern/release-policy#section-2",
+          "excerpt": "Section 2: Complete a recovery drill and attach the evidence before review."
+        }
+      ]
+    },
+    "relay": {
+      "id": "ca9eca20905b4dfe96f409e05ecca6e5",
+      "status": "pending",
+      "revision": 1,
+      "context_hash": "04f9059adda5762aaa62e5bafbcb91de9b292b82c569fcb8e71c3c1a8cae848b",
+      "packet": {
+        "task": "Publish the Lantern release",
+        "purpose": "Resume work using the current source-linked context.",
+        "recipient": "reviewer",
+        "context": {
+          "project": "lantern",
+          "revision": 1,
+          "task_id": "launch",
+          "task": "Publish the Lantern release",
+          "status": "todo",
+          "dependencies": [
+            {
+              "id": "recovery",
+              "name": "Run the recovery drill",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review",
+                "recovery"
+              ]
+            },
+            {
+              "id": "review",
+              "name": "Complete release review",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review"
+              ]
+            }
+          ],
+          "decisions": [
+            {
+              "id": "gate",
+              "text": "Recovery drill evidence is required before release review.",
+              "state": "blocking",
+              "version": 1,
+              "path": [
+                "launch",
+                "review",
+                "gate",
+                "release-policy"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "release-policy",
+              "title": "Lantern release policy",
+              "uri": "fixture://lantern/release-policy#section-2",
+              "excerpt": "Section 2: Complete a recovery drill and attach the evidence before review."
+            }
+          ]
+        },
+        "permissions": [
+          "read_selected_context",
+          "propose_work"
+        ],
+        "expected_result": "Return evidence and a proposed next step for human review.",
+        "return_route": "Human approval queue"
+      },
+      "stale": false
+    },
+    "tool_trace": [
+      {
+        "step": 1,
+        "tool": "get_task_context",
+        "arguments": {
+          "task_id": "launch"
+        },
+        "observation": {
+          "project": "lantern",
+          "revision": 1,
+          "task_id": "launch",
+          "task": "Publish the Lantern release",
+          "status": "todo",
+          "dependencies": [
+            {
+              "id": "recovery",
+              "name": "Run the recovery drill",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review",
+                "recovery"
+              ]
+            },
+            {
+              "id": "review",
+              "name": "Complete release review",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review"
+              ]
+            }
+          ],
+          "decisions": [
+            {
+              "id": "gate",
+              "text": "Recovery drill evidence is required before release review.",
+              "state": "blocking",
+              "version": 1,
+              "path": [
+                "launch",
+                "review",
+                "gate",
+                "release-policy"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "release-policy",
+              "title": "Lantern release policy",
+              "uri": "fixture://lantern/release-policy#section-2",
+              "excerpt": "Section 2: Complete a recovery drill and attach the evidence before review."
+            }
+          ]
+        }
+      },
+      {
+        "step": 3,
+        "tool": "propose_relay",
+        "arguments": {
+          "task_id": "launch",
+          "recipient": "reviewer"
+        },
+        "observation": {
+          "id": "ca9eca20905b4dfe96f409e05ecca6e5",
+          "status": "pending",
+          "revision": 1,
+          "context_hash": "04f9059adda5762aaa62e5bafbcb91de9b292b82c569fcb8e71c3c1a8cae848b",
+          "packet": {
+            "task": "Publish the Lantern release",
+            "purpose": "Resume work using the current source-linked context.",
+            "recipient": "reviewer",
+            "context": {
+              "project": "lantern",
+              "revision": 1,
+              "task_id": "launch",
+              "task": "Publish the Lantern release",
+              "status": "todo",
+              "dependencies": [
+                {
+                  "id": "recovery",
+                  "name": "Run the recovery drill",
+                  "status": "todo",
+                  "path": [
+                    "launch",
+                    "review",
+                    "recovery"
+                  ]
+                },
+                {
+                  "id": "review",
+                  "name": "Complete release review",
+                  "status": "todo",
+                  "path": [
+                    "launch",
+                    "review"
+                  ]
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "gate",
+                  "text": "Recovery drill evidence is required before release review.",
+                  "state": "blocking",
+                  "version": 1,
+                  "path": [
+                    "launch",
+                    "review",
+                    "gate",
+                    "release-policy"
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "release-policy",
+                  "title": "Lantern release policy",
+                  "uri": "fixture://lantern/release-policy#section-2",
+                  "excerpt": "Section 2: Complete a recovery drill and attach the evidence before review."
+                }
+              ]
+            },
+            "permissions": [
+              "read_selected_context",
+              "propose_work"
+            ],
+            "expected_result": "Return evidence and a proposed next step for human review.",
+            "return_route": "Human approval queue"
+          },
+          "stale": false
+        }
+      }
+    ],
+    "validation_events": [
+      "Incomplete plan: requested missing pending-relay tool call."
+    ],
+    "model_reply": {
+      "summary": "Recovery drill evidence is required before release review. Launch task is blocked by policy gate. Dependency on recovery drill remains unfulfilled.",
+      "next_check": "Await human approval of pending relay packet.",
+      "source_ids": [
+        "release-policy"
+      ]
+    },
+    "seconds": 4.05,
+    "run_id": "525b42190597474b818db228bc760ef9"
+  },
+  "specialist_fresh_session": {
+    "answer": "[release-policy] states that a recovery drill must be completed and evidence attached before release review. The current status of both \"Run the recovery drill\" and \"Complete release review\" is \"todo,\" and the gate decision blocks release review until recovery evidence is provided.  \n\nTodo: Verify that recovery drill evidence has been generated and uploaded.  \n\nNext verification: Confirm existence and validity of recovery drill evidence in the system.",
+    "model": "qwen3:4b-instruct",
+    "run_id": "9d73fab73d0f4d018f9abe77db3dbdb8",
+    "relay_id": "ca9eca20905b4dfe96f409e05ecca6e5",
+    "context": {
+      "project": "lantern",
+      "revision": 1,
+      "task_id": "launch",
+      "task": "Publish the Lantern release",
+      "status": "todo",
+      "dependencies": [
+        {
+          "id": "recovery",
+          "name": "Run the recovery drill",
+          "status": "todo",
+          "path": [
+            "launch",
+            "review",
+            "recovery"
+          ]
+        },
+        {
+          "id": "review",
+          "name": "Complete release review",
+          "status": "todo",
+          "path": [
+            "launch",
+            "review"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "gate",
+          "text": "Recovery drill evidence is required before release review.",
+          "state": "blocking",
+          "version": 1,
+          "path": [
+            "launch",
+            "review",
+            "gate",
+            "release-policy"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "release-policy",
+          "title": "Lantern release policy",
+          "uri": "fixture://lantern/release-policy#section-2",
+          "excerpt": "Section 2: Complete a recovery drill and attach the evidence before review."
+        }
+      ]
+    },
+    "fresh_session": true,
+    "executed_work": false
+  },
+  "after_policy_amendment": {
+    "answer": "Release blocked by incomplete 'review' and 'recovery' dependencies. Policy gate cleared per release-policy-v2 [release-policy-v2].\n\nCurrent source: [release-policy-v2]\n\nProposed handoff: task launch to reviewer; pending human approval.\n\nNext check: Await human approval of pending relay to reviewer.",
+    "model": "qwen3:4b-instruct",
+    "context": {
+      "project": "lantern",
+      "revision": 2,
+      "task_id": "launch",
+      "task": "Publish the Lantern release",
+      "status": "todo",
+      "dependencies": [
+        {
+          "id": "recovery",
+          "name": "Run the recovery drill",
+          "status": "todo",
+          "path": [
+            "launch",
+            "review",
+            "recovery"
+          ]
+        },
+        {
+          "id": "review",
+          "name": "Complete release review",
+          "status": "todo",
+          "path": [
+            "launch",
+            "review"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "gate",
+          "text": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete.",
+          "state": "cleared",
+          "version": 2,
+          "path": [
+            "launch",
+            "review",
+            "gate",
+            "release-policy-v2"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "release-policy-v2",
+          "title": "Lantern policy amendment 2",
+          "uri": "fixture://lantern/policy-amendment/2",
+          "excerpt": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete."
+        }
+      ]
+    },
+    "relay": {
+      "id": "415b5fdd37654acda7e79c5c9b282b9b",
+      "status": "pending",
+      "revision": 2,
+      "context_hash": "01cc12990aed75c0d33f8ce3fcfb8813af90609b24a325e6244503b3b45c9039",
+      "packet": {
+        "task": "Publish the Lantern release",
+        "purpose": "Resume work using the current source-linked context.",
+        "recipient": "reviewer",
+        "context": {
+          "project": "lantern",
+          "revision": 2,
+          "task_id": "launch",
+          "task": "Publish the Lantern release",
+          "status": "todo",
+          "dependencies": [
+            {
+              "id": "recovery",
+              "name": "Run the recovery drill",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review",
+                "recovery"
+              ]
+            },
+            {
+              "id": "review",
+              "name": "Complete release review",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review"
+              ]
+            }
+          ],
+          "decisions": [
+            {
+              "id": "gate",
+              "text": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete.",
+              "state": "cleared",
+              "version": 2,
+              "path": [
+                "launch",
+                "review",
+                "gate",
+                "release-policy-v2"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "release-policy-v2",
+              "title": "Lantern policy amendment 2",
+              "uri": "fixture://lantern/policy-amendment/2",
+              "excerpt": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete."
+            }
+          ]
+        },
+        "permissions": [
+          "read_selected_context",
+          "propose_work"
+        ],
+        "expected_result": "Return evidence and a proposed next step for human review.",
+        "return_route": "Human approval queue"
+      },
+      "stale": false
+    },
+    "tool_trace": [
+      {
+        "step": 1,
+        "tool": "get_task_context",
+        "arguments": {
+          "task_id": "launch"
+        },
+        "observation": {
+          "project": "lantern",
+          "revision": 2,
+          "task_id": "launch",
+          "task": "Publish the Lantern release",
+          "status": "todo",
+          "dependencies": [
+            {
+              "id": "recovery",
+              "name": "Run the recovery drill",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review",
+                "recovery"
+              ]
+            },
+            {
+              "id": "review",
+              "name": "Complete release review",
+              "status": "todo",
+              "path": [
+                "launch",
+                "review"
+              ]
+            }
+          ],
+          "decisions": [
+            {
+              "id": "gate",
+              "text": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete.",
+              "state": "cleared",
+              "version": 2,
+              "path": [
+                "launch",
+                "review",
+                "gate",
+                "release-policy-v2"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "id": "release-policy-v2",
+              "title": "Lantern policy amendment 2",
+              "uri": "fixture://lantern/policy-amendment/2",
+              "excerpt": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete."
+            }
+          ]
+        }
+      },
+      {
+        "step": 3,
+        "tool": "propose_relay",
+        "arguments": {
+          "task_id": "launch",
+          "recipient": "reviewer"
+        },
+        "observation": {
+          "id": "415b5fdd37654acda7e79c5c9b282b9b",
+          "status": "pending",
+          "revision": 2,
+          "context_hash": "01cc12990aed75c0d33f8ce3fcfb8813af90609b24a325e6244503b3b45c9039",
+          "packet": {
+            "task": "Publish the Lantern release",
+            "purpose": "Resume work using the current source-linked context.",
+            "recipient": "reviewer",
+            "context": {
+              "project": "lantern",
+              "revision": 2,
+              "task_id": "launch",
+              "task": "Publish the Lantern release",
+              "status": "todo",
+              "dependencies": [
+                {
+                  "id": "recovery",
+                  "name": "Run the recovery drill",
+                  "status": "todo",
+                  "path": [
+                    "launch",
+                    "review",
+                    "recovery"
+                  ]
+                },
+                {
+                  "id": "review",
+                  "name": "Complete release review",
+                  "status": "todo",
+                  "path": [
+                    "launch",
+                    "review"
+                  ]
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "gate",
+                  "text": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete.",
+                  "state": "cleared",
+                  "version": 2,
+                  "path": [
+                    "launch",
+                    "review",
+                    "gate",
+                    "release-policy-v2"
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "release-policy-v2",
+                  "title": "Lantern policy amendment 2",
+                  "uri": "fixture://lantern/policy-amendment/2",
+                  "excerpt": "Policy amendment: the recovery drill evidence has been accepted. Review remains incomplete."
+                }
+              ]
+            },
+            "permissions": [
+              "read_selected_context",
+              "propose_work"
+            ],
+            "expected_result": "Return evidence and a proposed next step for human review.",
+            "return_route": "Human approval queue"
+          },
+          "stale": false
+        }
+      }
+    ],
+    "validation_events": [
+      "Incomplete plan: requested missing pending-relay tool call."
+    ],
+    "model_reply": {
+      "summary": "Release blocked by incomplete 'review' and 'recovery' dependencies. Policy gate cleared per release-policy-v2 [release-policy-v2].",
+      "next_check": "Await human approval of pending relay to reviewer.",
+      "source_ids": [
+        "release-policy-v2"
+      ]
+    },
+    "seconds": 3.97,
+    "run_id": "58571e89fd8f4f4a84ca1f1befd56450"
+  },
+  "stale_approval_rejected": true,
+  "human_approval_in_test": "scripted fixture only"
+}

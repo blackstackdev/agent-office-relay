@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-15",
+  "result": "PASS",
+  "checks": [
+    "Fresh Python virtual environment installed pinned requirements",
+    "Dependency consistency check passed",
+    "Copied CLI queried the existing real FalkorDB service",
+    "Fresh npm ci from lockfile succeeded",
+    "Fresh production frontend build succeeded"
+  ],
+  "scope": "Clean dependency directories on the same Windows host; Docker/Ollama already installed and cached",
+  "fresh_machine_tested": false
+}

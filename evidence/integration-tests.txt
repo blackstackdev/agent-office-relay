@@ -1,0 +1,29 @@
+test_approval_is_absent_from_model_tools (test_agent_boundary.AgentBoundaryChecks.test_approval_is_absent_from_model_tools) ... ok
+test_current_source_is_required_after_policy_change (test_agent_boundary.AgentBoundaryChecks.test_current_source_is_required_after_policy_change) ... ok
+test_missing_or_invented_source_citation_is_rejected (test_agent_boundary.AgentBoundaryChecks.test_missing_or_invented_source_citation_is_rejected) ... ok
+test_model_cannot_invoke_approval (test_agent_boundary.AgentBoundaryChecks.test_model_cannot_invoke_approval) ... ok
+test_proposal_requires_observed_graph_context (test_agent_boundary.AgentBoundaryChecks.test_proposal_requires_observed_graph_context) ... ok
+test_specialist_cannot_start_from_pending_relay (test_agent_boundary.AgentBoundaryChecks.test_specialist_cannot_start_from_pending_relay) ... ok
+test_structured_handoff_uses_actual_packet_identity (test_agent_boundary.AgentBoundaryChecks.test_structured_handoff_uses_actual_packet_identity) ... ok
+test_structured_model_reply_rejects_obsolete_document (test_agent_boundary.AgentBoundaryChecks.test_structured_model_reply_rejects_obsolete_document) ... ok
+test_unverified_model_answer_does_not_count_as_success (test_agent_boundary.AgentBoundaryChecks.test_unverified_model_answer_does_not_count_as_success) ... ok
+test_approval_requires_human_confirmation (test_graph.GraphChecks.test_approval_requires_human_confirmation) ... ok
+test_approved_packet_becomes_unavailable_when_context_changes (test_graph.GraphChecks.test_approved_packet_becomes_unavailable_when_context_changes) ... ok
+test_duplicate_approval_is_rejected (test_graph.GraphChecks.test_duplicate_approval_is_rejected) ... ok
+test_fresh_proposal_after_mutation_can_be_approved (test_graph.GraphChecks.test_fresh_proposal_after_mutation_can_be_approved) ... ok
+test_history_preserves_packet_and_original_source (test_graph.GraphChecks.test_history_preserves_packet_and_original_source) ... ok
+test_invalid_decision_does_not_change_revision (test_graph.GraphChecks.test_invalid_decision_does_not_change_revision) ... ok
+test_mutation_between_context_read_and_proposal_is_rejected (test_graph.GraphChecks.test_mutation_between_context_read_and_proposal_is_rejected) ... ok
+test_new_process_reads_persisted_packet (test_graph.GraphChecks.test_new_process_reads_persisted_packet) ... ok
+test_no_database_means_failure_without_fallback (test_graph.GraphChecks.test_no_database_means_failure_without_fallback) ... ok
+test_only_selected_role_consumes_approved_packet (test_graph.GraphChecks.test_only_selected_role_consumes_approved_packet) ... ok
+test_real_multihop_context_with_source (test_graph.GraphChecks.test_real_multihop_context_with_source) ... ok
+test_seed_preserves_existing_work (test_graph.GraphChecks.test_seed_preserves_existing_work) ... ok
+test_stale_proposal_is_rejected (test_graph.GraphChecks.test_stale_proposal_is_rejected) ... ok
+test_unknown_and_query_like_task_are_rejected (test_graph.GraphChecks.test_unknown_and_query_like_task_are_rejected) ... ok
+test_unknown_recipient_cannot_receive_proposal (test_graph.GraphChecks.test_unknown_recipient_cannot_receive_proposal) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 3.085s
+
+OK

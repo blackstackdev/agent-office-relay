@@ -1,0 +1,188 @@
+1
+00:00:00,000 --> 00:00:04,100
+Agent Office is a local agent handoff prototype
+for graph hacks.
+
+2
+00:00:05,000 --> 00:00:08,380
+It carries the reasons behind a task, so the
+next specialist
+
+3
+00:00:08,380 --> 00:00:11,260
+can resume with current traceable context.
+
+4
+00:00:12,531 --> 00:00:14,991
+We are working with a fictional release project.
+
+5
+00:00:15,811 --> 00:00:17,151
+I ask what blocks the release.
+
+6
+00:00:17,971 --> 00:00:22,471
+The local language model reads task context from
+FalkorDB, then
+
+7
+00:00:22,471 --> 00:00:23,391
+proposes a relay.
+
+8
+00:00:24,571 --> 00:00:26,991
+These are real tool calls against the running
+database.
+
+9
+00:00:28,452 --> 00:00:30,392
+The release depends on a review.
+
+10
+00:00:31,232 --> 00:00:35,172
+A policy decision governs that review and the
+decision points to
+
+11
+00:00:35,172 --> 00:00:35,932
+its source document.
+
+12
+00:00:36,872 --> 00:00:39,232
+The source requires recovery drill evidence.
+
+13
+00:00:40,192 --> 00:00:44,132
+The graph returns both the relationship path and
+the original excerpt
+
+14
+00:00:44,132 --> 00:00:46,012
+so the answer can be checked.
+
+15
+00:00:47,197 --> 00:00:48,797
+The relay is still pending.
+
+16
+00:00:49,837 --> 00:00:54,537
+Its packet records the recipient, selected
+dependencies, sources, permissions,
+
+17
+00:00:55,177 --> 00:00:57,097
+expected result, and return route.
+
+18
+00:00:58,037 --> 00:00:59,357
+Approval is a separate control.
+
+19
+00:01:00,257 --> 00:01:03,717
+The model can propose this packet, but approval
+is absent from
+
+20
+00:01:03,717 --> 00:01:04,397
+its tool list.
+
+21
+00:01:05,566 --> 00:01:09,886
+After approval, the review specialist starts a
+fresh conversation with
+
+22
+00:01:09,886 --> 00:01:11,066
+only the scoped packet.
+
+23
+00:01:11,986 --> 00:01:15,546
+It cites the same policy and proposes what to
+verify next.
+
+24
+00:01:16,566 --> 00:01:18,306
+One local model serves both roles.
+
+25
+00:01:19,246 --> 00:01:22,406
+This is a verification plan, not a claim that
+the release
+
+26
+00:01:22,406 --> 00:01:23,666
+work has been executed.
+
+27
+00:01:24,891 --> 00:01:28,771
+Now, I amend the policy to record that the
+recovery evidence
+
+28
+00:01:28,771 --> 00:01:33,631
+has been accepted, saving creates a new source
+version and advances
+
+29
+00:01:33,631 --> 00:01:34,591
+the graph revision.
+
+30
+00:01:35,551 --> 00:01:40,091
+The previous answer and relay become outdated,
+reusing that old packet
+
+31
+00:01:40,091 --> 00:01:40,731
+is blocked.
+
+32
+00:01:41,987 --> 00:01:45,827
+I ask again, the new context cites the amended
+source.
+
+33
+00:01:46,727 --> 00:01:50,287
+The policy gate is cleared while the review task
+remains open.
+
+34
+00:01:51,007 --> 00:01:54,027
+Clearing a policy gate does not complete a task
+or approve
+
+35
+00:01:54,027 --> 00:01:54,627
+a release.
+
+36
+00:01:54,627 --> 00:01:58,287
+The next handoff is built from this updated
+context.
+
+37
+00:01:59,497 --> 00:02:05,077
+FalkorDB also stores relay snapshots, approvals,
+source history, and
+
+38
+00:02:05,077 --> 00:02:05,677
+agent runs.
+
+39
+00:02:06,817 --> 00:02:10,697
+Restart testing confirms an approved packet,
+survives a database restart,
+
+40
+00:02:11,397 --> 00:02:12,137
+and a fresh process.
+
+41
+00:02:13,197 --> 00:02:17,037
+This local prototype uses fictional data,
+produces reviewable drafts,
+
+42
+00:02:17,617 --> 00:02:19,657
+and makes no autonomous release actions.

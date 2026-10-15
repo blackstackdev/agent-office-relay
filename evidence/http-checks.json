@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-15",
+  "result": "PASS",
+  "checks": [
+    "Real graph state available via same-origin local endpoint",
+    "Cross-origin approval request rejected",
+    "Approval without explicit confirmation rejected",
+    "No arbitrary execution endpoint",
+    "Oversized request rejected before inference"
+  ],
+  "scope": "Local prototype boundary checks; not a security audit"
+}
